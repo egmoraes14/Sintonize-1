@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for sintonize on 2024-09-11T20:30:09-03:00
+# fly.toml app configuration file generated for sintonize on 2024-09-11T23:08:50-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -15,9 +15,13 @@ console_command = '/code/manage.py shell'
 [http_service]
   internal_port = 8000
   force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
 
-
-
+[[vm]]
+  size = 'shared-cpu-1x'
 
 [[statics]]
   guest_path = '/code/static'
