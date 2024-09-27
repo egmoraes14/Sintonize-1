@@ -6,7 +6,8 @@ body {
 
 /* Estilos do Header */
 header {
-    position: relative;
+    display: flex;
+    align-items: center;
     text-align: center;
     background-color: #ffffff;
 }
@@ -21,10 +22,12 @@ header {
 }
 
 .header-content {
-    position: absolute;
-    top: 75%;
+    /*position: absolute;*/
+    /*top: 75%;*/
     left: 50%;
-    transform: translate(-50%, -50%);
+    /*transform: translate(-50%, -50%);*/
+    justify-content:center;
+    text-align: center;
     padding: 40px;
     background: #FFFFFF;
     border-radius: 20px;
@@ -32,6 +35,8 @@ header {
     max-width: 90%;
     text-align: left;
     color: #1C646D;
+    align-items: center;
+
 }
 
 .header-content h1 {
@@ -180,6 +185,7 @@ header {
 
 .conteudo-consequencia {
     display: flex; /* Usa flexbox para alinhar imagem e texto */
+    display: wrap;
     align-items: center; /* Alinha verticalmente ao centro */
     gap: 16px;/* Espaçamento entre imagem e texto */
 }
@@ -193,21 +199,29 @@ header {
 }
 
 .consequencias-header {
-    display: flex; /* Usa flex para alinhar a imagem e o texto */
-    align-items: center; /* Alinha a imagem e o texto no topo */
-    margin-left: 325px;
-   
+    display: flex;
+    display: wrap;
+    justify-content: center;
+    gap: 20px;
+    /*flex-wrap: wrap;*/
+    padding: 20px;
+    align-items: center;
 }
 
 .imagem-consequencias-lateral {
     width: 180px; /* Largura da imagem */
     height: 180px; /* Altura da imagem */
     margin-right: 40px; /* Espaçamento à direita da imagem */
+    align-items: center;
 }
 
 .consequencias-texto {
     display: flex; /* Flex para alinhar o título e a descrição */
+    display: wrap;
     flex-direction: column; /* Coloca título acima da descrição */
+    align-items: center;
+    word-break: break-word; /* Permite que palavras longas quebrem linha */
+    white-space: normal;
 }
 
 
@@ -218,11 +232,14 @@ header {
     font-weight: 700;
     line-height: 48px;
     margin-bottom: 10px; /* Ajuste de margem inferior */
+    text-align: center;
+    align-self: auto;
 }
 
 
 .container-consequencias {
     display: flex;
+    display: wrap;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
@@ -268,6 +285,8 @@ header {
     height: 100px;/* Altura fixa */
     margin-bottom: 10px;
     left: 2px; 
+    display: wrap;
+    align-items: center;
 }
 
 .texto-consequencia {
@@ -279,8 +298,9 @@ header {
     font-size: 20px;/* Tamanho do título do card */
     font-weight: 500;
     line-height: 28px;
-    color: #000000 /* Cor do título */
-     margin-bottom: 10px;/* Margem abaixo do título */
+    color: #000000; /* Cor do título */
+    margin-bottom: 10px;/* Margem abaixo do título */
+    
 }
 
 .label {
@@ -320,8 +340,19 @@ header {
     font-size: 20px; /* Tamanho da fonte */
     font-weight: 400; /* Peso da fonte */
     line-height: 24px; /* Altura da linha */
-    text-align: left; /* Alinhamento à esquerda */
+    text-align: center; /* Alinhamento à esquerda */
     margin-top: 10px; /* Espaco acima, se necessário */
+    align-items: center;
 }
+@media (max-width: 768px) {
+    .consequencias-header {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+    }
 
+    .consequencias-texto {
+        margin-left: 0; /* Remove a margem à esquerda em telas pequenas */
+        margin-top: 15px; /* Adiciona um espaço superior */
+    }
+}
 
